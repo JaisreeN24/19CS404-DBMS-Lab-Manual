@@ -256,3 +256,5 @@ WHERE purch_amt<200 OR NOT (ord_date>='2012-02-10' AND customer_id<3009);
 
 ## RESULT
 Thus, the SQL queries to implement different types of constraints and DDL commands have been executed successfully.
+<img width="1366" height="77" alt="image" src="https://github.com/user-attachments/assets/d4acb443-2469-4014-bb0a-515d6cdf8121" />
+
