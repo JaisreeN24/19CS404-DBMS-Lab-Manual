@@ -169,100 +169,117 @@ FROM Archived_students;
 
 **Output:**
 
+<img width="1183" height="273" alt="image" src="https://github.com/user-attachments/assets/2da4d2c6-0fb9-4489-9f9e-0e65d1b53cba" />
+
 
 **Question 5**
 ---
+<img width="1233" height="619" alt="image" src="https://github.com/user-attachments/assets/07cc48ea-46a8-4e28-9b69-5aa5e15bc967" />
+
 
 ```sql
-SELECT first_name, last_name, (julianday(discharge_date)- julianday(admission_date))+1 AS no_of_days
-FROM  Patients
-WHERE no_of_days>3;
+ALTER TABLE Student_details
+ADD COLUMN Mobilenumber number;
 ```
 
 **Output:**
 
-<img width="1178" height="314" alt="image" src="https://github.com/user-attachments/assets/49740bf2-9e52-4581-b809-7b7b4c4da506" />
+<img width="1184" height="348" alt="image" src="https://github.com/user-attachments/assets/25d897b8-c998-4957-b180-f8336dfef377" />
 
 
 **Question 6**
 ---
-<img width="1227" height="730" alt="image" src="https://github.com/user-attachments/assets/96138d3b-198e-440a-a24d-4eba9c5740a1" />
+<img width="1230" height="368" alt="image" src="https://github.com/user-attachments/assets/e554af75-40db-4a50-a39f-fd63a4cfdf38" />
 
 ```sql
-UPDATE employees
-SET salary=salary+500, email='updated'
-WHERE job_id='SA_REP' AND commission_pct>0.15;
+CREATE TABLE Orders(
+    OrderID INTEGER PRIMARY KEY,
+    OrderDate DATE NOT NULL,
+    CustomerID INTEGER,
+    FOREIGN KEY(CustomerID) REFERENCES Customers(CustomerID)
+)
 ```
 
 **Output:**
 
-<img width="1190" height="508" alt="image" src="https://github.com/user-attachments/assets/29f16457-5c32-47fa-a60c-7f40f150ba5e" />
+<img width="1192" height="274" alt="image" src="https://github.com/user-attachments/assets/4bcd7754-e0eb-4342-b24e-f7eec64753e3" />
 
 
 **Question 7**
 ---
-<img width="1217" height="680" alt="image" src="https://github.com/user-attachments/assets/b1d75256-8128-463c-9152-7725e6af2d55" />
+<img width="1227" height="438" alt="image" src="https://github.com/user-attachments/assets/7d668e7d-6ab7-4b95-90ea-154dac86d323" />
 
 
 ```sql
-SELECT DISTINCT job, SUBSTR(job, 1,3) AS job_abbr
-FROM emp;
+CREATE TABLE Employees(
+    EmployeeID INTEGER PRIMARY KEY,
+    FirstName TEXT NOT NULL,
+    LastName TEXT NOT NULL,
+    Email TEXT UNIQUE,
+    Salary INTEGER CHECK(Salary>0),
+    DepartmentID INTEGER,
+    Foreign Key(DepartmentID) References Departments(DepartmentID)
+)
 ```
 
 **Output:**
 
-<img width="1181" height="519" alt="image" src="https://github.com/user-attachments/assets/87f1a58d-35c6-423d-b988-8f874fd8f8ab" />
+<img width="1184" height="418" alt="image" src="https://github.com/user-attachments/assets/55370874-ca33-4d06-8660-92485d61b141" />
 
 
 **Question 8**
 ---
-<img width="1216" height="456" alt="image" src="https://github.com/user-attachments/assets/c87dafa1-9e75-47f0-8bcb-7415fe23dfa7" />
+<img width="1234" height="438" alt="image" src="https://github.com/user-attachments/assets/fd834c7d-fc47-4843-8992-132f4878c4e0" />
 
 
 ```sql
-UPDATE suppliers 
-SET supplier_name=UPPER(supplier_name)
-WHERE contact_person LIKE '%Singh';
+CREATE TABLE contacts(
+    contact_id INTEGER PRIMARY KEY,
+    first_name TEXT NOT NULL,
+    last_name TEXT NOT NULL,
+    email TEXT,
+    phone TEXT NOT NULL CHECK(LENGTH(phone)=10)
+)
 ```
 
 **Output:**
 
-<img width="1185" height="332" alt="image" src="https://github.com/user-attachments/assets/0e9a79c8-971a-4dde-9d33-cadff4f4ffbd" />
+<img width="1187" height="311" alt="image" src="https://github.com/user-attachments/assets/4c38ef9c-1b6d-411a-9c71-23f6ec8bf1ac" />
 
 
 **Question 9**
 ---
-<img width="1226" height="506" alt="image" src="https://github.com/user-attachments/assets/ef69fc5d-9485-4b8a-9dac-77897b07714e" />
+<img width="1210" height="450" alt="image" src="https://github.com/user-attachments/assets/65860b2a-a0d7-4d3c-bf88-5c8ec76f260d" />
 
 
 ```sql
-DELETE FROM Customer
-WHERE GRADE%2<>0;
+ALTER TABLE Companies RENAME COLUMN name TO first_name;
+ALTER TABLE Companies ADD COLUMN mobilenumber number;
+ALTER TABLE Companies ADD COLUMN DOB Date;
+ALTER TABLE Companies ADD COLUMN State varchar(30);
 ```
 
 **Output:**
 
-<img width="1179" height="415" alt="image" src="https://github.com/user-attachments/assets/2b2c799d-d61a-4f0d-a7c9-cbe1261dc3f5" />
+<img width="1185" height="394" alt="image" src="https://github.com/user-attachments/assets/54c0a10b-3317-42ce-bb80-4228b60e073f" />
 
 
 **Question 10**
 ---
-<img width="1231" height="667" alt="image" src="https://github.com/user-attachments/assets/20cbc032-309c-41ed-8baf-f31284fa3c2c" />
+<img width="1228" height="272" alt="image" src="https://github.com/user-attachments/assets/7383db31-9009-425c-929f-3f66759b0ee7" />
 
 
 ```sql
-SELECT ord_no,purch_amt,ord_date ,customer_id,salesman_id
-FROM orders
-WHERE purch_amt<200 OR NOT (ord_date>='2012-02-10' AND customer_id<3009);
+INSERT INTO Customers(CustomerID,Name,Address,City,ZipCode) Values(301,'Michael Jordan','123 Maple St','Chicago',60616);
 ```
 
 **Output:**
 
-<img width="1185" height="462" alt="image" src="https://github.com/user-attachments/assets/e631348b-c831-41e2-b278-aa7d11389fc7" />
+<img width="1179" height="227" alt="image" src="https://github.com/user-attachments/assets/671843fd-bcca-490b-9a0b-8a360b02eeae" />
 
 
 
 ## RESULT
 Thus, the SQL queries to implement different types of constraints and DDL commands have been executed successfully.
-<img width="1366" height="81" alt="image" src="https://github.com/user-attachments/assets/dc6ca0b0-1d11-4d87-b015-0639bcb896e3" />
+<img width="1362" height="82" alt="image" src="https://github.com/user-attachments/assets/af98f7c6-5cbb-431b-8ab2-b9fde81cf2f8" />
 
