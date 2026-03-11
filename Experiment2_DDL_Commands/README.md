@@ -105,65 +105,73 @@ CREATE TABLE Table_Name (
 
 **Question 1**
 --
-<img width="1234" height="458" alt="image" src="https://github.com/user-attachments/assets/a342b628-b09e-4785-a4bf-0038738f2ea8" />
+<img width="1227" height="372" alt="image" src="https://github.com/user-attachments/assets/7e084829-c8e9-4441-a133-95d2359c6c6b" />
 
 
 ```sql
-SELECT * FROM EmployeeInfo 
-WHERE EmpLname LIKE '____a';
+CREATE TABLE Products(
+    ProductID PRIMARY KEY,
+    ProductName NOT NULL,
+    Price REAL CHECK(Price>0),
+    Stock INTEGER CHECK(Stock>=0)
+)
 ```
 
 **Output:**
 
-<img width="1180" height="226" alt="image" src="https://github.com/user-attachments/assets/988643ef-feb8-4073-aeb6-f364bd541707" />
+<img width="1185" height="256" alt="image" src="https://github.com/user-attachments/assets/e88ea190-ba54-4e49-8cbe-a14ae5d83fdb" />
 
 
 **Question 2**
 ---
-<img width="1230" height="706" alt="image" src="https://github.com/user-attachments/assets/176d01d7-1083-49d3-b7bf-d198e6566d48" />
+<img width="1217" height="475" alt="image" src="https://github.com/user-attachments/assets/c279073f-887b-420a-8768-9fccfd00110f" />
 
 
 ```sql
-SELECT ename,
-    CAST((julianday('2024-08-30')-julianday(hiredate))/365.25 AS INTEGER) AS Tenure
-FROM emp;
+CREATE TABLE item(
+    item_id TEXT PRIMARY KEY,
+    item_desc TEXT NOT NULL,
+    rate INTEGER NOT NULL,
+    icom_id TEXT(4),
+    Foreign Key(icom_id) REFERENCES company(com_id) ON UPDATE CASCADE ON DELETE CASCADE
+)
 ```
 
 **Output:**
 
-<img width="1181" height="345" alt="image" src="https://github.com/user-attachments/assets/6c98606c-faa8-42f0-91a6-6251688f78a4" />
+<img width="1181" height="336" alt="image" src="https://github.com/user-attachments/assets/08383ae1-166d-4831-9630-391077066b65" />
 
 
 **Question 3**
 ---
-<img width="1218" height="529" alt="image" src="https://github.com/user-attachments/assets/88448211-3bb0-4b83-947c-f5edab10fa2e" />
+<img width="1225" height="361" alt="image" src="https://github.com/user-attachments/assets/79d674ec-3d5e-4d55-8950-d2b1692b4f36" />
 
 
 ```sql
-SELECT product_id, original_price, discount_percentage, (original_price*(1-discount_percentage)) AS discounted_price
-FROM Products;
+INSERT INTO Books
+SELECT ISBN, Title, Author, Publisher, YearPublished
+FROM Out_of_print_books;
 ```
 
 **Output:**
 
-<img width="1185" height="433" alt="image" src="https://github.com/user-attachments/assets/c7f45623-0c8b-4f7f-80c2-9bf1656aca62" />
+<img width="1184" height="271" alt="image" src="https://github.com/user-attachments/assets/95a0429d-b6dd-4bfe-8727-4ca3e89ba3c5" />
 
 **Question 4**
 ---
-<img width="1232" height="483" alt="image" src="https://github.com/user-attachments/assets/531b9ddb-57bf-4fc7-8a37-88d00b3ad2bf" />
+<img width="1228" height="500" alt="image" src="https://github.com/user-attachments/assets/74ff395f-4f96-4f6d-9e57-1fb4354f6f9d" />
 
 ```sql
-SELECT customer_id,cust_name, city, grade, salesman_id FROM customer
-WHERE city='New York' OR grade<=100;
+INSERT INTO Student_details
+SELECT RollNo, Name, Gender, Subject, MARKS
+FROM Archived_students;
 ```
 
 **Output:**
 
-<img width="1184" height="406" alt="image" src="https://github.com/user-attachments/assets/c98d416e-2bd6-46d6-92d4-b0186bcb98de" />
 
 **Question 5**
 ---
-<img width="1211" height="567" alt="image" src="https://github.com/user-attachments/assets/f8857ef0-83c8-4514-90d5-7408225aa21e" />
 
 ```sql
 SELECT first_name, last_name, (julianday(discharge_date)- julianday(admission_date))+1 AS no_of_days
