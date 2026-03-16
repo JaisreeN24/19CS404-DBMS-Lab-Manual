@@ -106,8 +106,7 @@ DELETE FROM sensitive_data WHERE id = 1;
 ```
 
 ## OUTPUT
-<img width="1270" height="442" alt="image" src="https://github.com/user-attachments/assets/8d6c5df3-75be-4a5c-b49a-02ce1a6bf2b9" />
-
+![image](https://github.com/user-attachments/assets/ea28038b-2bbf-44ed-8e6a-38e93dc3c841)
 
 ---
 
@@ -229,6 +228,10 @@ INSERT INTO employees VALUES (203, 'GoodPay', 'Trainee', 3500, 20)
 ```
 
 ## OUTPUT
+![image](https://github.com/user-attachments/assets/59572249-9ada-4a12-9925-07d1bf51c6e2)
+
+
+
 ![image](https://github.com/user-attachments/assets/9aaafeb9-876c-4a6c-816f-4c8bfe0f866a)
 
 
