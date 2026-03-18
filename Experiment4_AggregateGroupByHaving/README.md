@@ -38,123 +38,155 @@ HAVING condition;
 
 **Question 1**
 --
--- Paste Question 1 here
+<img width="1203" height="530" alt="image" src="https://github.com/user-attachments/assets/ba86602d-114a-41c2-be1e-23cabc07e6e2" />
+
 
 ```sql
--- Paste your SQL code below for Question 1
+SELECT COUNT(DISTINCT customer_id) AS COUNT
+FROM customer
+WHERE grade IS NOT NULL;
 ```
 
 **Output:**
+<img width="1140" height="296" alt="image" src="https://github.com/user-attachments/assets/616fd36e-c0d9-4ec1-b3a0-ee1f43863b99" />
 
-![Output1](output.png)
 
 **Question 2**
 ---
--- Paste Question 2 here
+<img width="1214" height="469" alt="image" src="https://github.com/user-attachments/assets/4488591d-7cae-476a-82cd-cc57daccbfcf" />
 
 ```sql
--- Paste your SQL code below for Question 2
+<img width="1214" height="469" alt="image" src="https://github.com/user-attachments/assets/d4d741e7-3d06-4f0e-8dc7-7645029f577a" />
 ```
 
 **Output:**
 
-![Output2](output.png)
+<img width="1161" height="293" alt="image" src="https://github.com/user-attachments/assets/ee4b2408-5fc3-40ae-ac02-9ead77464870" />
 
 **Question 3**
 ---
--- Paste Question 3 here
+<img width="1150" height="475" alt="image" src="https://github.com/user-attachments/assets/090b17e6-d856-4cc5-b714-f01f1d078936" />
 
 ```sql
--- Paste your SQL code below for Question 3
+SELECT COUNT(DISTINCT city) AS unique_cities
+FROM customer;
 ```
 
 **Output:**
+<img width="1083" height="286" alt="image" src="https://github.com/user-attachments/assets/0ce7929a-80df-479b-9df7-73b9820e723b" />
 
-![Output3](output.png)
 
 **Question 4**
 ---
--- Paste Question 4 here
+<img width="956" height="645" alt="image" src="https://github.com/user-attachments/assets/37fbbe74-9914-4dd2-869c-72391a317b36" />
+
 
 ```sql
--- Paste your SQL code below for Question 4
+SELECT InsuranceCompany, COUNT(PatientID) AS TotalPatients
+FROM Insurance
+GROUP BY InsuranceCompany;
 ```
 
 **Output:**
 
-![Output4](output.png)
+<img width="1071" height="666" alt="image" src="https://github.com/user-attachments/assets/de6ea558-f6cf-49c0-ac72-b8c87b7369cf" />
 
 **Question 5**
 ---
--- Paste Question 5 here
+<img width="1200" height="581" alt="image" src="https://github.com/user-attachments/assets/c3e3e987-2190-49a7-aa38-b17c966e532a" />
+
 
 ```sql
--- Paste your SQL code below for Question 5
+SELECT Specialty,Gender,COUNT(*) AS TotalDoctors
+FROM Doctors
+GROUP BY Specialty,Gender;
 ```
 
 **Output:**
 
-![Output5](output.png)
+<img width="925" height="633" alt="image" src="https://github.com/user-attachments/assets/234375f8-0acc-4292-871b-91e72502268f" />
+
 
 **Question 6**
 ---
--- Paste Question 6 here
+<img width="1044" height="581" alt="image" src="https://github.com/user-attachments/assets/7f4cc2ef-ee72-4e9e-9232-41ed363f20f5" />
+
 
 ```sql
--- Paste your SQL code below for Question 6
+SELECT PatientID, COUNT(*) AS TotalRecords
+FROM MedicalRecords
+GROUP BY PatientID;
 ```
 
 **Output:**
 
-![Output6](output.png)
+<img width="681" height="627" alt="image" src="https://github.com/user-attachments/assets/81c4b343-56e3-4c8d-84ce-2a7333208a91" />
 
 **Question 7**
----
--- Paste Question 7 here
+---<img width="1222" height="562" alt="image" src="https://github.com/user-attachments/assets/c1e4898d-79ef-4eea-8ca3-9c612181f9e1" />
+
 
 ```sql
--- Paste your SQL code below for Question 7
+SELECT occupation, MIN(workhour)
+FROM employee1
+GROUP BY occupation
+HAVING MIN(workhour)>8
 ```
 
 **Output:**
 
-![Output7](output.png)
+<img width="820" height="456" alt="image" src="https://github.com/user-attachments/assets/92b23394-7a9d-426e-891d-8562ef149ebc" />
+
 
 **Question 8**
 ---
--- Paste Question 8 here
+<img width="1223" height="501" alt="image" src="https://github.com/user-attachments/assets/00870936-7e54-4ef3-94e3-5e8299e64a2f" />
+
 
 ```sql
--- Paste your SQL code below for Question 8
+SELECT jdate, MAX(workhour)
+FROM employee1
+GROUP BY jdate
+HAVING MAX(workhour)>12;
 ```
 
 **Output:**
 
-![Output8](output.png)
+<img width="776" height="359" alt="image" src="https://github.com/user-attachments/assets/4cdb4a51-9685-4414-9437-998db306d244" />
+
 
 **Question 9**
 ---
--- Paste Question 9 here
+<img width="1182" height="511" alt="image" src="https://github.com/user-attachments/assets/b0745abd-a1da-4de7-bfb6-740d7d69cb9f" />
+
 
 ```sql
--- Paste your SQL code below for Question 9
+SELECT category_id, product_name, MAX(price) AS Price
+FROM products 
+GROUP BY category_id
+HAVING MAX(price)>15;
 ```
 
 **Output:**
 
-![Output9](output.png)
+!<img width="910" height="346" alt="image" src="https://github.com/user-attachments/assets/b0be383d-2418-4c83-88d0-326d9ca150f5" />
+
 
 **Question 10**
 ---
--- Paste Question 10 here
+<img width="937" height="579" alt="image" src="https://github.com/user-attachments/assets/1baa19ff-8fda-436d-a82f-0cc0752a7e25" />
+
 
 ```sql
--- Paste your SQL code below for Question 10
+SELECT address, AVG(salary)
+FROM customer1
+GROUP BY address
+HAVING AVG(salary)<15000.0;
 ```
 
 **Output:**
+<img width="1190" height="590" alt="image" src="https://github.com/user-attachments/assets/ebdd4c83-2940-403c-aa77-4bbcda530c50" />
 
-![Output10](output.png)
 
 
 ## RESULT
