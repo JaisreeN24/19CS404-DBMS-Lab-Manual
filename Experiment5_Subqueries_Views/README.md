@@ -147,7 +147,7 @@ ORDER BY ID;
 
 
 ```sql
--SELECT s.salesman_id, s.name
+SELECT s.salesman_id, s.name
 FROM salesman s
 JOIN customer c ON s.salesman_id=c.salesman_id
 GROUP BY s.salesman_id, s.name
@@ -156,7 +156,7 @@ HAVING COUNT(c.customer_id)>1;
 
 **Output:**
 
-![Output8](output.png)<img width="970" height="459" alt="image" src="https://github.com/user-attachments/assets/46442816-b38c-4462-a209-9d3fb7d717ff" />
+<img width="970" height="459" alt="image" src="https://github.com/user-attachments/assets/46442816-b38c-4462-a209-9d3fb7d717ff" />
 
 **Question 9**
 ---
