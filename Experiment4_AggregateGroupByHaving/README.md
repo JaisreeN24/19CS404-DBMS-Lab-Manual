@@ -123,7 +123,8 @@ GROUP BY PatientID;
 <img width="681" height="627" alt="image" src="https://github.com/user-attachments/assets/81c4b343-56e3-4c8d-84ce-2a7333208a91" />
 
 **Question 7**
----<img width="1222" height="562" alt="image" src="https://github.com/user-attachments/assets/c1e4898d-79ef-4eea-8ca3-9c612181f9e1" />
+---
+<img width="1222" height="562" alt="image" src="https://github.com/user-attachments/assets/c1e4898d-79ef-4eea-8ca3-9c612181f9e1" />
 
 
 ```sql
